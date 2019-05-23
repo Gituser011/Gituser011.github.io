@@ -7,5 +7,31 @@ $(document).ready(function () {
 function handleSubmit(event) {
   event.preventDefault();
 
-  console.log('submit');
+  var msg = $('#msg').val();
+  var email = $('#email').val();
+
+  var data = {
+    to: "tomas.filicko@gmail.com",
+    subject: "CV - Správa",
+    body: msg,
+    from: email
+  }
+
+  $.ajax({
+    type: "POST",
+    url: "https://stored.azurewebsites.net/api/mail",
+    headers: {
+      "Authorization": 'Bearer ' + token
+    },
+    data: JSON.stringify(data),
+    contentType: "application/json"
+  })
+    .done(function () {
+      document.getElementById("sprava2").innerHTML=""
+      document.getElementById("sprava").innerHTML="Ďakujem za Vašu spätnú väzbu."
+    })
+    .fail(function (error) {
+      document.getElementById("sprava").innerHTML=""
+      document.getElementById("sprava2").innerHTML="Váš e-mail sa nepodarilo odoslať. Nevyplnili ste kolonku Správa."
+    });
 }
