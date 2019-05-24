@@ -10,10 +10,14 @@
   padding-bottom: 55px;
 }
 
-#sprava2{
+#sprava1 {
+  padding-bottom: 6px;
+  color: green;
+}
+
+#sprava2 {
+  padding-bottom: 6px;
   color: rgb(248, 85, 85);
 }
 
-#sprava1  {
-  color: green;
-}
+

@@ -27,11 +27,13 @@ function handleSubmit(event) {
     contentType: "application/json"
   })
     .done(function () {
-      document.getElementById("sprava2").innerHTML=""
       document.getElementById("sprava1").innerHTML="Ďakujem za Vašu spätnú väzbu."
+      document.getElementById("sprava2").innerHTML=""
+      
     })
     .fail(function (error) {
-      document.getElementById("sprava1").innerHTML=""
       document.getElementById("sprava2").innerHTML="Váš e-mail sa nepodarilo odoslať. Nevyplnili ste kolonku Správa."
+      document.getElementById("sprava1").innerHTML=""
+      
     });
 }
