@@ -28,10 +28,10 @@ function handleSubmit(event) {
   })
     .done(function () {
       document.getElementById("sprava2").innerHTML=""
-      document.getElementById("sprava").innerHTML="Ďakujem za Vašu spätnú väzbu."
+      document.getElementById("sprava1").innerHTML="Ďakujem za Vašu spätnú väzbu."
     })
     .fail(function (error) {
-      document.getElementById("sprava").innerHTML=""
+      document.getElementById("sprava1").innerHTML=""
       document.getElementById("sprava2").innerHTML="Váš e-mail sa nepodarilo odoslať. Nevyplnili ste kolonku Správa."
     });
 }
